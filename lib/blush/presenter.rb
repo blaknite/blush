@@ -7,7 +7,7 @@ module Blush
     end
 
     def helpers
-      Blush.helpers
+      @helpers ||= Blush::HelperProxy.new
     end
 
     alias_method :h, :helpers
