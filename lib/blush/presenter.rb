@@ -7,7 +7,7 @@ module Blush
     end
 
     def helpers
-      @helpers ||= ActionView::Base.new
+      Blush.helpers
     end
 
     alias_method :h, :helpers
