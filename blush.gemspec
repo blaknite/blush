@@ -1,6 +1,6 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-require "gemspec/version"
+require "blush/version"
 
 Gem::Specification.new do |s|
   s.name        = 'blush'
