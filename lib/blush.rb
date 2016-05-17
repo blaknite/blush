@@ -20,3 +20,4 @@ end
 
 ActiveRecord::Base.send :extend, Blush::HasPresenter
 ActionController::Base.send :include, Blush::ViewContext
+ActionMailer::Base.send :include, Blush::ViewContext
