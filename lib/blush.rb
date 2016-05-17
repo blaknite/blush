@@ -9,12 +9,12 @@ module Blush
     @config ||= Blush::Configuration.new
   end
 
-  module_function def helpers=(view_context)
-    @helpers = view_context
+  module_function def view_context=(view_context)
+    @view_context = view_context
   end
 
-  module_function def helpers
-    @helpers ||= ApplicationController.helpers
+  module_function def view_context
+    @view_context ||= ApplicationController.helpers
   end
 end
 

@@ -2,7 +2,7 @@ module Blush
   module ViewContext
     def view_context
       super.tap do |context|
-        Blush.helpers = context
+        Blush.view_context = context
       end
     end
   end
