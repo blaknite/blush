@@ -17,7 +17,7 @@ end
 
 class CommentPresenter < Blush::Presenter
   def content
-    h.pretty_format(object.content)
+    h.simple_format(object.content)
   end
 end
 
