@@ -6,6 +6,8 @@ module Blush
       @object = object
     end
 
+    alias_method :o, :object
+
     def helpers
       @helpers ||= Blush::HelperProxy.new
     end
