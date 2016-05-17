@@ -11,5 +11,11 @@ module Blush
     end
 
     alias_method :h, :helpers
+
+    def localize
+      helpers.localize
+    end
+
+    alias_method :l, :helpers
   end
 end
