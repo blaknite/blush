@@ -21,5 +21,9 @@ class CommentPresenter < Blush::Presenter
   end
 end
 
+# explicitly call the presenter methods
 @comment.presenter.content
+
+# delegate to the model if method doesn't exist on presenter
+@comment.present(:content)
 ```
