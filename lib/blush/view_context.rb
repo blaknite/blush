@@ -7,14 +7,14 @@ module Blush
     # Taps into the call to view_context to caches it
     def view_context
       super.tap do |context|
-        set_blush_helpers(context)
+        Blush.view_context = context
       end
     end
 
     ##
-    # Sets the cached helper proxy based on the given view_context
-    def set_blush_helpers(context = nil)
-      Blush.helpers = Blush::HelperProxy.new(context || view_context)
+    # Sets the cached view_context
+    def activate_blush
+      Blush.view_context = view_context
     end
   end
 

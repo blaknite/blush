@@ -5,7 +5,7 @@ module Blush
         self.class_eval do
           include Blush::ViewContext
 
-          before_action :set_blush_helpers
+          before_action :activate_blush
         end
       end
     end
