@@ -14,8 +14,7 @@ module Blush
     ##
     # Sets the cached helper proxy based on the given view_context
     def set_blush_helpers(context = nil)
-      context ||= view_context
-      Blush.helpers = Blush::HelperProxy.new(context)
+      Blush.helpers = Blush::HelperProxy.new(context || view_context)
     end
   end
 
