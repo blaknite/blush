@@ -3,6 +3,7 @@ require 'blush/has_presenter'
 require 'blush/helper_proxy'
 require 'blush/presenter'
 require 'blush/view_context'
+require 'blush/railtie'
 
 ##
 # Wrapper module for Blush
@@ -31,7 +32,3 @@ module Blush
   end
 
 end
-
-ActiveRecord::Base.send :extend, Blush::HasPresenter
-ActionController::Base.send :include, Blush::ViewContext
-ActionMailer::Base.send :include, Blush::ViewContext
