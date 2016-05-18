@@ -21,14 +21,14 @@ module Blush
 
   ##
   # Cache the view context globally
-  module_function def view_context=(view_context)
-    @view_context = view_context
+  module_function def helpers=(helper_proxy)
+    @helpers = helper_proxy
   end
 
   ##
   # Get the cached view context
-  module_function def view_context
-    @view_context ||= ApplicationController.helpers
+  module_function def helpers
+    @helpers ||= Blush::HelperProxy.new(ApplicationController.new.view_context)
   end
 
 end
