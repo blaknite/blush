@@ -16,7 +16,7 @@ module Blush
     ##
     # Access helpers from the view context through HelperProxy
     def helpers
-      @helpers ||= Blush.helpers
+      Blush.helpers
     end
 
     ##
