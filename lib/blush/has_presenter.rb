@@ -5,9 +5,12 @@ module Blush
 
       options, accessor_name = accessor_name, options unless options
       self.blush_options = options
+      self.blush_options[:accessor_name] = accessor_name || Blush.config.accessor_name
 
-      define_method(accessor_name || Blush.config.accessor_name) do
-        @presenter ||= (self.blush_options[:class] || "#{self.model_name}Presenter").constantize.new(self)
+      define_method(self.blush_options[:accessor_name]) do
+        accessor_name = "@#{self.blush_options[:accessor_name]}"
+        presenter_class = (self.blush_options[:class] || "#{self.model_name}Presenter").constantize
+        instance_variable_get(accessor_name) || instance_variable_set(accessor_name, presenter_class.new(self))
       end
 
       define_method(self.blush_options[:helper_name] || Blush.config.helper_name) do |method, *args, &block|
