@@ -4,6 +4,8 @@ module Blush
       ActiveSupport.on_load :action_controller do
         self.class_eval do
           include Blush::ViewContext
+
+          before_action :set_blush_helpers
         end
       end
     end
@@ -12,8 +14,6 @@ module Blush
       ActiveSupport.on_load :action_mailer do
         self.class_eval do
           include Blush::ViewContext
-
-          before_filter :set_blush_helpers
         end
       end
     end
