@@ -1,4 +1,7 @@
 module Blush
+
+  ##
+  # Class to store configuration for Blush
   class Configuration
     attr_accessor :accessor_name, :helper_name
 
@@ -7,4 +10,5 @@ module Blush
       @helper_name = :present
     end
   end
+
 end
