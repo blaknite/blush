@@ -1,5 +1,9 @@
 module Blush
   class Railtie < Rails::Railtie
+    config.after_initialize do |app|
+      app.config.paths.add 'app/presenters', eager_load: true
+    end
+
     initializer "blush.setup_action_controller" do |app|
       ActiveSupport.on_load :action_controller do
         self.class_eval do
